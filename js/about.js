@@ -44,3 +44,24 @@ questions.forEach(q => {
   });
 });
 */
+const Slide = new Swiper(".slidewrapper", {
+  direction: "horizontal",
+  loop: true,
+  navigation: {
+    prevEl: ".swiper-custom-prev",
+    nextEl: ".swiper-custom-next",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+const prevBtn = document.querySelector(".portfolio .prev");
+const nextBtn = document.querySelector(".portfolio .next");
+prevBtn.addEventListener("click", () => {
+  Slide.slidePrev();
+});
+nextBtn.addEventListener("click", () => {
+  Slide.slideNext();
+});
